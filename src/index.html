@@ -47,7 +47,7 @@
       <div class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-8">
         <div class="flex items-center gap-3">
         </div>
-        <nav class="hidden flex-1 items-center justify-center gap-8 text-3xl text-mist md:flex">
+        <nav class="flex flex-1 items-center justify-center gap-8 text-3xl text-mist">
           <a href="#overview" class="font-bold hover:text-ink"><span class="text-candygreen">Peace</span><span class="text-blush">By</span><span class="text-aqua">Piece</span></a>
         </nav>
       </div>
@@ -93,7 +93,7 @@
           <!-- frame image on top, transparent window reveals the camera behind it -->
           <img id="frameImage" src="/Front_Frame.png" alt="" class="absolute inset-0 h-full w-full pointer-events-none select-none z-10" />
 
-          <div id="imageGrid" class="absolute inset-0 grid grid-cols-3 gap-4 p-4 items-start content-center opacity-0 pointer-events-none z-20">
+          <div id="imageGrid" class="absolute inset-0 hidden lg:grid grid-cols-3 gap-4 p-4 items-start content-center opacity-0 pointer-events-none z-20">
             <div class="rounded-[1.75rem] border border-rim/80 bg-none shadow-sm overflow-hidden">
               <img src="/Latch.png" alt="Latch" class="aspect-square w-full object-cover" />
             </div>
@@ -144,6 +144,21 @@
             <p class="text-[11px] uppercase tracking-[0.3em] text-ink">Working behavior</p>
             <p class="mt-3 ink">Camera access uses the host browser and the gesture logic runs locally in the page. If permission is blocked, the UI shows a clear fallback state.</p>
           </article>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 lg:hidden">
+          <div class="rounded-[1.75rem] border border-rim/80 overflow-hidden">
+            <img src="/Latch.png" alt="Latch" class="aspect-square w-full object-cover" />
+          </div>
+          <div class="rounded-[1.75rem] border border-rim/80 overflow-hidden">
+            <img src="/Slide.png" alt="Slide" class="aspect-square w-full object-cover" />
+          </div>
+          <div class="rounded-[1.75rem] border border-rim/80 overflow-hidden">
+            <img src="/Features_FWide.png" alt="Features" class="aspect-square w-full object-cover" />
+          </div>
+          <div class="col-span-3 rounded-[1.75rem] border border-rim/80 overflow-hidden">
+            <img src="/Features_FWide.png" alt="Features wide" class="aspect-square w-full object-cover" />
+          </div>
         </div>
 
         <section id="capture" class="rounded-[2rem] border border-white/20 bg-sand p-6 sm:p-8">
