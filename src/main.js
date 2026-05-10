@@ -11,7 +11,6 @@ const HAND_CONNECTIONS = [
 const video = document.getElementById('video');
 const canvas = document.getElementById('overlay');
 const ctx = canvas.getContext('2d');
-const gestureName = document.getElementById('gestureName');
 const gesturePrompt = document.getElementById('gesturePrompt');
 const statusPill = document.getElementById('statusPill');
 const holdBar = document.getElementById('holdBar');
@@ -48,7 +47,6 @@ function setStep(index) {
   currentStep = Math.min(index, tutorialSteps.length - 1);
   matchStart = 0;
   const step = tutorialSteps[currentStep];
-  gestureName.textContent = step.name;
   gesturePrompt.textContent = step.prompt;
   holdBar.style.width = '0%';
   storyCards.forEach((card) => {
@@ -80,7 +78,7 @@ function detectThumbsUp(lm) {
 
 function drawHand(lm) {
   ctx.save();
-  ctx.strokeStyle = 'rgba(220,231,255,0.9)';
+  ctx.strokeStyle = 'rgba(46,139,212,0.9)';
   ctx.lineWidth = 3;
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
@@ -119,7 +117,7 @@ function drawGuide(step, lm) {
   const inBox = cx > g.x && cx < g.x + g.width && cy > g.y && cy < g.y + g.height;
 
   ctx.save();
-  ctx.strokeStyle = inBox ? 'rgba(200,244,238,0.95)' : 'rgba(255,217,235,0.8)';
+  ctx.strokeStyle = inBox ? 'rgba(46,139,212,0.95)' : 'rgba(254,182,58,0.8)';
   ctx.lineWidth = 3;
   ctx.setLineDash([]);
   ctx.strokeRect(g.x, g.y, g.width, g.height);
@@ -133,7 +131,7 @@ function updateStatus(text, cls) {
 
 function finishTutorial() {
   completed = true;
-  updateStatus('Success', 'border-aqua/40 bg-aqua/15 text-aqua/90');
+  updateStatus('Success', 'border-aqua/30 bg-white text-aqua');
   successCard.classList.remove('hidden');
   overlayGuide.classList.add('hidden');
 }
@@ -146,7 +144,7 @@ function tick(lm) {
     if (!matchStart) matchStart = performance.now();
     const progress = Math.min(1, (performance.now() - matchStart) / 900);
     holdBar.style.width = `${progress * 100}%`;
-    updateStatus('Matching', 'border-aqua/30 bg-aqua/10 text-aqua/90');
+    updateStatus('Matching', 'border-aqua/30 bg-white text-aqua');
     if (progress >= 1) {
       if (currentStep === tutorialSteps.length - 1) finishTutorial();
       else setStep(currentStep + 1);
@@ -154,13 +152,13 @@ function tick(lm) {
   } else {
     matchStart = 0;
     holdBar.style.width = '0%';
-    updateStatus(lm ? 'Adjust' : 'Waiting', 'border-white/10 bg-white/5 text-white/60');
+    updateStatus(lm ? 'Adjust' : 'Waiting', 'border-rim/80 bg-white text-mist');
   }
 }
 
 async function startCamera() {
   if (!navigator.mediaDevices?.getUserMedia) {
-    updateStatus('Camera unavailable', 'border-rose-400/30 bg-rose-400/10 text-rose-100');
+    updateStatus('Camera unavailable', 'border-rose-300 bg-rose-50 text-rose-600');
     gesturePrompt.textContent = 'Your browser cannot access the camera.';
     return;
   }
@@ -190,7 +188,7 @@ async function startCamera() {
 
     video.srcObject = stream;
     await video.play();
-    updateStatus('Waiting', 'border-white/10 bg-white/5 text-white/60');
+    updateStatus('Waiting', 'border-rim/80 bg-white text-mist');
 
     const loop = () => {
       canvas.width = video.videoWidth || canvas.clientWidth;
@@ -213,7 +211,7 @@ async function startCamera() {
     requestAnimationFrame(loop);
   } catch (error) {
     console.error(error);
-    updateStatus('Camera blocked', 'border-rose-400/30 bg-rose-400/10 text-rose-100');
+    updateStatus('Camera blocked', 'border-rose-300 bg-rose-50 text-rose-600');
     gesturePrompt.textContent = 'Camera permission is required for gesture matching.';
   }
 }
