@@ -131,7 +131,7 @@ function updateStatus(text, cls) {
 
 function finishTutorial() {
   completed = true;
-  updateStatus('Success', 'border-aqua/40 bg-aqua/15 text-aqua/90');
+  updateStatus('Success', 'border-aqua bg-[#0d1f2e] text-aqua');
   successCard.classList.remove('hidden');
   overlayGuide.classList.add('hidden');
 }
@@ -144,7 +144,7 @@ function tick(lm) {
     if (!matchStart) matchStart = performance.now();
     const progress = Math.min(1, (performance.now() - matchStart) / 900);
     holdBar.style.width = `${progress * 100}%`;
-    updateStatus('Matching', 'border-aqua/30 bg-aqua/10 text-aqua/90');
+    updateStatus('Matching', 'border-aqua bg-[#0d1f2e] text-aqua');
     if (progress >= 1) {
       if (currentStep === tutorialSteps.length - 1) finishTutorial();
       else setStep(currentStep + 1);
@@ -152,7 +152,7 @@ function tick(lm) {
   } else {
     matchStart = 0;
     holdBar.style.width = '0%';
-    updateStatus(lm ? 'Adjust' : 'Waiting', 'border-white/10 bg-white/5 text-white/60');
+    updateStatus(lm ? 'Adjust' : 'Waiting', 'border-[#252530] bg-[#18181f] text-[#7F7F7E]');
   }
 }
 
