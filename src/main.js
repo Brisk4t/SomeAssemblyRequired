@@ -11,7 +11,6 @@ const HAND_CONNECTIONS = [
 const video = document.getElementById('video');
 const canvas = document.getElementById('overlay');
 const ctx = canvas.getContext('2d');
-const gestureName = document.getElementById('gestureName');
 const gesturePrompt = document.getElementById('gesturePrompt');
 const statusPill = document.getElementById('statusPill');
 const holdBar = document.getElementById('holdBar');
@@ -48,7 +47,6 @@ function setStep(index) {
   currentStep = Math.min(index, tutorialSteps.length - 1);
   matchStart = 0;
   const step = tutorialSteps[currentStep];
-  gestureName.textContent = step.name;
   gesturePrompt.textContent = step.prompt;
   holdBar.style.width = '0%';
   storyCards.forEach((card) => {
