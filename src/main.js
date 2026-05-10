@@ -16,6 +16,9 @@ const statusPill = document.getElementById('statusPill');
 const holdBar = document.getElementById('holdBar');
 const successCard = document.getElementById('successCard');
 const overlayGuide = document.getElementById('overlayGuide');
+const cameraView = document.getElementById('cameraView');
+const frameImage = document.getElementById('frameImage');
+const imageGrid = document.getElementById('imageGrid');
 const storyCards = Array.from(document.querySelectorAll('.story-card'));
 
 const tutorialSteps = [
@@ -134,6 +137,7 @@ function finishTutorial() {
   updateStatus('Success', 'border-aqua/30 bg-white text-aqua');
   successCard.classList.remove('hidden');
   overlayGuide.classList.add('hidden');
+  storyCards.forEach((card) => { card.dataset.active = 'false'; });
 }
 
 function tick(lm) {
@@ -218,3 +222,15 @@ async function startCamera() {
 
 setStep(0);
 startCamera();
+
+function updateScrollState() {
+  const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
+  const t = window.scrollY / maxScroll;
+  const progress = Math.max(0, Math.min(1, (t - 0.05) / 0.7));
+  cameraView.style.opacity = 1 - progress;
+  frameImage.style.opacity = 1 - progress;
+  imageGrid.style.opacity = progress;
+  imageGrid.style.pointerEvents = progress > 0.5 ? 'auto' : 'none';
+}
+window.addEventListener('scroll', updateScrollState, { passive: true });
+updateScrollState();
