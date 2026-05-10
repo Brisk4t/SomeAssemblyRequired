@@ -1,0 +1,19 @@
+{
+  "name": "camera-gesture-product-page",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mediapipe/camera_utils": "^0.3.1675466862",
+    "@mediapipe/drawing_utils": "^0.3.1675461605",
+    "@mediapipe/hands": "^0.4.1675469240"
+  },
+  "devDependencies": {
+    "vite": "^5.4.8"
+  }
+}
