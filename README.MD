@@ -46,6 +46,7 @@ Rather than handing patients a pre-assembled device, the modular design invites 
 | Setup often requires clinician assistance | Designed for independent, accessible assembly |
 | No therapeutic value before first use | Rehabilitation begins from step one |
 
+![Cover2](./assets/briefcase_1_edit.png)
 ---
 
 ## Who It's For
@@ -69,6 +70,7 @@ Unbox → Assemble (rehab step 1–N) → Use mirror → AI-guided exercises
 ```
 
 ![Features](./assets/Comparison.png)
+![Cover3](/assets/briefcase_2_edit.png)
 
 
 *PeaceByPiece — because recovery starts before the first reflection.*
