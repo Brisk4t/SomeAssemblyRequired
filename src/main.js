@@ -78,7 +78,7 @@ function detectThumbsUp(lm) {
 
 function drawHand(lm) {
   ctx.save();
-  ctx.strokeStyle = 'rgba(220,231,255,0.9)';
+  ctx.strokeStyle = 'rgba(46,139,212,0.9)';
   ctx.lineWidth = 3;
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
@@ -117,7 +117,7 @@ function drawGuide(step, lm) {
   const inBox = cx > g.x && cx < g.x + g.width && cy > g.y && cy < g.y + g.height;
 
   ctx.save();
-  ctx.strokeStyle = inBox ? 'rgba(200,244,238,0.95)' : 'rgba(255,217,235,0.8)';
+  ctx.strokeStyle = inBox ? 'rgba(46,139,212,0.95)' : 'rgba(254,182,58,0.8)';
   ctx.lineWidth = 3;
   ctx.setLineDash([]);
   ctx.strokeRect(g.x, g.y, g.width, g.height);
