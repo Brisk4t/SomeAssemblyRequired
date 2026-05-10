@@ -1,5 +1,5 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   --mockup-radius: 2rem;
 }
 
@@ -10,9 +10,11 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 20% 18%, rgba(255, 217, 235, 0.18), transparent 28%),
-    radial-gradient(circle at 82% 10%, rgba(200, 244, 238, 0.14), transparent 22%),
-    linear-gradient(180deg, #070912 0%, #0a1020 56%, #05060a 100%);
+    radial-gradient(circle at 18% 12%, rgba(240, 143, 60, 0.12), transparent 24%),
+    radial-gradient(circle at 82% 10%, rgba(44, 132, 214, 0.1), transparent 22%),
+    radial-gradient(circle at 74% 82%, rgba(125, 103, 200, 0.08), transparent 26%),
+    linear-gradient(180deg, #f8f7f1 0%, #f3f1ea 54%, #eeece4 100%);
+  color: #18212f;
 }
 
 .story-card {
@@ -21,6 +23,7 @@ body {
 
 .story-card[data-active='true'] {
   transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(24, 33, 47, 0.08);
 }
 
 .material-symbols-rounded {

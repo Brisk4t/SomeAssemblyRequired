@@ -27,38 +27,38 @@
               sans: ['Roboto', 'system-ui', 'sans-serif'],
             },
             colors: {
-              ink: '#090b12',
-              surface: '#111118',
-              raised: '#18181f',
-              rim: '#252530',
-              mist: '#7F7F7E',
-              blush: '#FEB63A',
-              aqua: '#2E8BD4',
-              sand: '#765FB6',
+              ink: '#18212f',
+              surface: '#ffffff',
+              raised: '#f7f5ef',
+              rim: '#d9d7cd',
+              mist: '#7b8277',
+              blush: '#f08f3c',
+              aqua: '#2c84d6',
+              sand: '#7d67c8',
             },
           },
         },
       };
     </script>
   </head>
-  <body class="min-h-screen bg-ink font-sans text-white antialiased">
-    <header class="sticky top-0 z-50 border-b border-rim bg-surface">
+  <body class="min-h-screen bg-[#f4f3ee] font-sans text-ink antialiased">
+    <header class="sticky top-0 z-50 border-b border-rim/80 bg-white/80 backdrop-blur-xl">
       <div class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-8">
         <div class="flex items-center gap-3">
-          <div class="grid h-10 w-10 place-items-center rounded-2xl bg-raised">
+          <div class="grid h-10 w-10 place-items-center rounded-2xl bg-raised shadow-sm">
             <span class="material-symbols-rounded text-[20px] text-aqua">camera</span>
           </div>
           <div>
             <p class="text-[11px] uppercase tracking-[0.32em] text-mist">Gesture Camera</p>
-            <p class="text-sm font-medium text-white">Vite product page demo</p>
+            <p class="text-sm font-medium text-ink">Vite product page demo</p>
           </div>
         </div>
         <nav class="hidden items-center gap-8 text-sm text-mist md:flex">
-          <a href="#overview" class="hover:text-white">Overview</a>
-          <a href="#tutorial" class="hover:text-white">Tutorial</a>
-          <a href="#capture" class="hover:text-white">Capture</a>
+          <a href="#overview" class="hover:text-ink">Overview</a>
+          <a href="#tutorial" class="hover:text-ink">Tutorial</a>
+          <a href="#capture" class="hover:text-ink">Capture</a>
         </nav>
-        <div class="inline-flex items-center gap-2 rounded-full border border-rim bg-raised px-4 py-2 text-sm text-mist">
+        <div class="inline-flex items-center gap-2 rounded-full border border-rim/80 bg-raised px-4 py-2 text-sm text-mist shadow-sm">
           <span class="material-symbols-rounded text-[18px] text-aqua">fiber_manual_record</span>
           Live demo
         </div>
@@ -73,13 +73,13 @@
             <video id="video" class="absolute inset-0 h-full w-full object-cover scale-x-[-1]" playsinline muted></video>
             <canvas id="overlay" class="absolute inset-0 h-full w-full scale-x-[-1]"></canvas>
 
-            <div class="absolute left-3 right-3 top-3 rounded-xl border border-rim bg-surface p-3">
+            <div class="absolute left-3 right-3 top-3 rounded-xl border border-rim/80 bg-white/88 p-3 shadow-sm backdrop-blur-md">
               <div class="flex items-center justify-between gap-3">
                 <div>
                   <p class="text-[10px] uppercase tracking-[0.28em] text-mist">Gesture target</p>
-                  <p id="gesturePrompt" class="mt-0.5 text-sm font-semibold text-white">Show an open palm</p>
+                  <p id="gesturePrompt" class="mt-0.5 text-sm font-semibold text-ink">Show an open palm</p>
                 </div>
-                <div id="statusPill" class="rounded-full border border-rim bg-raised px-2.5 py-1.5 text-[10px] uppercase tracking-[0.24em] text-mist">
+                <div id="statusPill" class="rounded-full border border-rim/80 bg-white px-2.5 py-1.5 text-[10px] uppercase tracking-[0.24em] text-mist shadow-sm">
                   Waiting
                 </div>
               </div>
@@ -88,12 +88,12 @@
               </div>
             </div>
 
-            <div id="successCard" class="absolute inset-x-3 bottom-3 hidden rounded-xl border border-aqua bg-surface p-3 text-center">
+            <div id="successCard" class="absolute inset-x-3 bottom-3 hidden rounded-xl border border-aqua/30 bg-white/92 p-3 text-center shadow-sm backdrop-blur-md">
               <p class="text-[10px] uppercase tracking-[0.3em] text-aqua">Success</p>
-              <p class="mt-1 text-base font-bold text-white">Gesture sequence complete.</p>
+              <p class="mt-1 text-base font-bold text-ink">Gesture sequence complete.</p>
             </div>
 
-            <div id="overlayGuide" class="absolute inset-x-3 bottom-3 rounded-xl border border-rim bg-surface p-3 text-xs text-mist">
+            <div id="overlayGuide" class="absolute inset-x-3 bottom-3 rounded-xl border border-rim/80 bg-white/90 p-3 text-xs text-mist shadow-sm backdrop-blur-md">
               <div class="flex items-center gap-2">
                 <span class="material-symbols-rounded text-[16px] text-blush">pan_tool</span>
                 <span>Fit your hand inside the guide.</span>
@@ -107,12 +107,12 @@
       </section>
 
       <section class="space-y-6 lg:pt-4">
-        <div class="rounded-[2rem] border border-rim bg-surface p-6 sm:p-8">
-          <p class="inline-flex items-center gap-2 rounded-full border border-rim bg-raised px-4 py-2 text-xs uppercase tracking-[0.3em] text-mist">
+        <div class="rounded-[2rem] border border-rim/80 bg-white/82 p-6 shadow-glow sm:p-8">
+          <p class="inline-flex items-center gap-2 rounded-full border border-rim/80 bg-raised px-4 py-2 text-xs uppercase tracking-[0.3em] text-mist shadow-sm">
             <span class="material-symbols-rounded text-[16px] text-blush">auto_awesome</span>
             Scroll to guide the story
           </p>
-          <h1 class="mt-5 max-w-2xl text-4xl font-black tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
+          <h1 class="mt-5 max-w-2xl text-4xl font-black tracking-[-0.045em] text-ink sm:text-5xl lg:text-6xl">
             A Vite-built camera page that teaches gestures in the frame.
           </h1>
           <p class="mt-5 max-w-2xl text-base leading-7 text-mist sm:text-lg">
@@ -121,43 +121,43 @@
         </div>
 
         <div id="tutorial" class="space-y-4">
-          <article class="story-card rounded-[1.75rem] border border-rim bg-surface p-5 transition data-[active=true]:border-white data-[active=true]:bg-raised" data-index="0" data-active="true">
+          <article class="story-card rounded-[1.75rem] border border-rim/80 bg-white/80 p-5 shadow-sm transition data-[active=true]:border-aqua/30 data-[active=true]:bg-raised" data-index="0" data-active="true">
             <p class="text-[11px] uppercase tracking-[0.3em] text-mist">Step 01</p>
-            <h2 class="mt-2 text-2xl font-bold text-white">Open palm</h2>
+            <h2 class="mt-2 text-2xl font-bold text-ink">Open palm</h2>
             <p class="mt-3 text-mist">Spread your fingers and hold the palm fully visible inside the overlay box.</p>
           </article>
-          <article class="story-card rounded-[1.75rem] border border-rim bg-surface p-5 transition data-[active=true]:border-blush data-[active=true]:bg-raised" data-index="1" data-active="false">
+          <article class="story-card rounded-[1.75rem] border border-rim/80 bg-white/80 p-5 shadow-sm transition data-[active=true]:border-blush data-[active=true]:bg-raised" data-index="1" data-active="false">
             <p class="text-[11px] uppercase tracking-[0.3em] text-blush">Step 02</p>
-            <h2 class="mt-2 text-2xl font-bold text-white">Pinch</h2>
+            <h2 class="mt-2 text-2xl font-bold text-ink">Pinch</h2>
             <p class="mt-3 text-mist">Bring thumb and index finger together until the tips nearly touch.</p>
           </article>
-          <article class="story-card rounded-[1.75rem] border border-rim bg-surface p-5 transition data-[active=true]:border-aqua data-[active=true]:bg-raised" data-index="2" data-active="false">
+          <article class="story-card rounded-[1.75rem] border border-rim/80 bg-white/80 p-5 shadow-sm transition data-[active=true]:border-aqua data-[active=true]:bg-raised" data-index="2" data-active="false">
             <p class="text-[11px] uppercase tracking-[0.3em] text-aqua">Step 03</p>
-            <h2 class="mt-2 text-2xl font-bold text-white">Thumbs up</h2>
+            <h2 class="mt-2 text-2xl font-bold text-ink">Thumbs up</h2>
             <p class="mt-3 text-mist">Raise the thumb while the other fingers curl down to finish the sequence.</p>
           </article>
-          <article class="rounded-[1.75rem] border border-rim bg-surface p-5">
+          <article class="rounded-[1.75rem] border border-rim/80 bg-white/80 p-5 shadow-sm">
             <p class="text-[11px] uppercase tracking-[0.3em] text-sand">Working behavior</p>
             <p class="mt-3 text-mist">Camera access uses the host browser and the gesture logic runs locally in the page. If permission is blocked, the UI shows a clear fallback state.</p>
           </article>
         </div>
 
-        <section id="capture" class="rounded-[2rem] border border-rim bg-surface p-6 sm:p-8">
+        <section id="capture" class="rounded-[2rem] border border-rim/80 bg-white/82 p-6 shadow-glow sm:p-8">
           <div class="flex flex-wrap items-center gap-3 text-sm text-mist">
-            <span class="inline-flex items-center gap-2 rounded-full border border-rim bg-raised px-4 py-2">
+            <span class="inline-flex items-center gap-2 rounded-full border border-rim/80 bg-raised px-4 py-2 shadow-sm">
               <span class="material-symbols-rounded text-[18px] text-mist">motion_photos_on</span>
               Smooth scroll narrative
             </span>
-            <span class="inline-flex items-center gap-2 rounded-full border border-rim bg-raised px-4 py-2">
+            <span class="inline-flex items-center gap-2 rounded-full border border-rim/80 bg-raised px-4 py-2 shadow-sm">
               <span class="material-symbols-rounded text-[18px] text-blush">camera</span>
               Live webcam
             </span>
-            <span class="inline-flex items-center gap-2 rounded-full border border-rim bg-raised px-4 py-2">
+            <span class="inline-flex items-center gap-2 rounded-full border border-rim/80 bg-raised px-4 py-2 shadow-sm">
               <span class="material-symbols-rounded text-[18px] text-aqua">hand_gesture</span>
               Gesture overlays
             </span>
           </div>
-          <div class="mt-6 h-px w-full bg-rim"></div>
+          <div class="mt-6 h-px w-full bg-gradient-to-r from-transparent via-rim to-transparent"></div>
           <p class="mt-6 max-w-3xl text-mist">
             Adjust the camera frame variables in CSS if you want a landscape mockup later. The gestures, overlay styling, and success flow are intentionally separated so you can extend the tutorial without changing the layout.
           </p>

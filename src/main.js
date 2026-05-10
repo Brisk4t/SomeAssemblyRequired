@@ -131,7 +131,7 @@ function updateStatus(text, cls) {
 
 function finishTutorial() {
   completed = true;
-  updateStatus('Success', 'border-aqua bg-[#0d1f2e] text-aqua');
+  updateStatus('Success', 'border-aqua/30 bg-white text-aqua');
   successCard.classList.remove('hidden');
   overlayGuide.classList.add('hidden');
 }
@@ -144,7 +144,7 @@ function tick(lm) {
     if (!matchStart) matchStart = performance.now();
     const progress = Math.min(1, (performance.now() - matchStart) / 900);
     holdBar.style.width = `${progress * 100}%`;
-    updateStatus('Matching', 'border-aqua bg-[#0d1f2e] text-aqua');
+    updateStatus('Matching', 'border-aqua/30 bg-white text-aqua');
     if (progress >= 1) {
       if (currentStep === tutorialSteps.length - 1) finishTutorial();
       else setStep(currentStep + 1);
@@ -152,13 +152,13 @@ function tick(lm) {
   } else {
     matchStart = 0;
     holdBar.style.width = '0%';
-    updateStatus(lm ? 'Adjust' : 'Waiting', 'border-[#252530] bg-[#18181f] text-[#7F7F7E]');
+    updateStatus(lm ? 'Adjust' : 'Waiting', 'border-rim/80 bg-white text-mist');
   }
 }
 
 async function startCamera() {
   if (!navigator.mediaDevices?.getUserMedia) {
-    updateStatus('Camera unavailable', 'border-rose-400/30 bg-rose-400/10 text-rose-100');
+    updateStatus('Camera unavailable', 'border-rose-300 bg-rose-50 text-rose-600');
     gesturePrompt.textContent = 'Your browser cannot access the camera.';
     return;
   }
@@ -188,7 +188,7 @@ async function startCamera() {
 
     video.srcObject = stream;
     await video.play();
-    updateStatus('Waiting', 'border-white/10 bg-white/5 text-white/60');
+    updateStatus('Waiting', 'border-rim/80 bg-white text-mist');
 
     const loop = () => {
       canvas.width = video.videoWidth || canvas.clientWidth;
@@ -211,7 +211,7 @@ async function startCamera() {
     requestAnimationFrame(loop);
   } catch (error) {
     console.error(error);
-    updateStatus('Camera blocked', 'border-rose-400/30 bg-rose-400/10 text-rose-100');
+    updateStatus('Camera blocked', 'border-rose-300 bg-rose-50 text-rose-600');
     gesturePrompt.textContent = 'Camera permission is required for gesture matching.';
   }
 }
