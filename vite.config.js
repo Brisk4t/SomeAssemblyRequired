@@ -7,6 +7,9 @@ const currentDir = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   root: resolve(currentDir, 'src'),
   publicDir: resolve(currentDir, 'assets'),
+  build: {
+    outDir: resolve(currentDir, 'dist'),
+  },
   server: {
     host: '0.0.0.0',
   },
